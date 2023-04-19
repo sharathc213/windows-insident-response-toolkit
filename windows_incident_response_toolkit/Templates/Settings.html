@@ -1,0 +1,159 @@
+{% extends 'Main.html' %} {% block Main %}
+<!-- Form Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">API Settings</h6>
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Virustotal API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.VT_API }}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">CENSYS APPID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.CENSYS_APPID }}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">CENSYS SECRET</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.CENSYS_SECRET}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">ABUSECH API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.ABUSECH_API_KEY}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">SHODAN API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.SHODAN_API_KEY}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">HUNTER API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.HUNTER_API_KEY}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">BITCOIN ABUSE API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.BITCOINABUSE_API_KEY}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">WIGEL API NAME</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.WIGLE_API_NAME}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">WIGEL API TOKEN</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.WIGLE_API_TOKEN}}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">SECURITY TRAIL API</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" value="{{ data.SECURITY_TRAIL_API}}">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Update API's</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Horizontal Form</h6>
+                <form>
+
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Virustotal API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://www.virustotal.com/">https://www.virustotal.com/</a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">CENSYS API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://accounts.censys.io/">https://accounts.censys.io/</a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">ABUSECH API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://bazaar.abuse.ch/ ">https://bazaar.abuse.ch/ </a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">SHODAN API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://account.shodan.io/">https://account.shodan.io/</a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">HUNTER API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-form-label"><a href="https://hunter.io/api-keys">https://hunter.io/api-keys</a></label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">BITCOIN ABUSE API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://www.bitcoinabuse.com/">https://www.bitcoinabuse.com/</a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">WIGEL API </label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://wigle.net/">https://wigle.net/</a></label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">SECURITY TRAIL API</label>
+                        <div class="col-sm-9">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"><a href="https://securitytrails.com/">https://securitytrails.com/</a></label>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Form End -->
+{% endblock Main %}
