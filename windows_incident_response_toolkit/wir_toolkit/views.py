@@ -17,12 +17,12 @@ def Signin(request):
 def Dashboard(request):
     return render(request,'Dashboard.html')
 
-def Form(request):
-    return render(request,'Form.html')
+def AddComputer(request):
+    return render(request,'AddComputer.html')
 
-def Settings(request):
-    context = {}
-    f = open('config.json')
-    data = json.load(f)
-    context["data"] = data['API']
-    return render(request,'Settings.html',context)
+# def Settings(request):
+#     context = {}
+#     f = open('config.json')
+#     data = json.load(f)
+#     context["data"] = data['API']
+#     return render(request,'Settings.html',context)

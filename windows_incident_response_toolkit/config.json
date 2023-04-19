@@ -1,0 +1,14 @@
+{
+    "API": {
+        "VT_API": "3a9a09afdabb62247cccf66052337ea71d14e2f53163bcab860b5f4fe698101a",
+        "CENSYS_APPID": "aaea6c65-b6ce-4220-b760-c87e6fafad45",
+        "CENSYS_SECRET": "GLOtI8lSPAd13bHmAHfzLFaPzbelDkXc",
+        "ABUSECH_API_KEY": "ddddd",
+        "SHODAN_API_KEY": "HAeStHk4R9evxKPJGfgwfyQI0mL3jV42",
+        "HUNTER_API_KEY": "f1877bde008fc3b10db2afa8629f88b3979587ce",
+        "BITCOINABUSE_API_KEY": "tvFkXOX2mSbgo7pC4hgWguqeQtGeob2dYrCzzohI",
+        "WIGLE_API_NAME": "AIDe74a14800e392a4e956325503b45d081",
+        "WIGLE_API_TOKEN": "5f3b2065c9ef50abb712336e9c065589",
+        "SECURITY_TRAIL_API": "meMmG61PaC0dOapmqy8Rma8XXA373vmC"
+    }
+}
