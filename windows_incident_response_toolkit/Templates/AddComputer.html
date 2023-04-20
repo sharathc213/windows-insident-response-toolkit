@@ -5,18 +5,23 @@
         <div class="card-body">
             <h4 class="card-title">Add New Computer</h4>
             <p class="card-description"> Add New Computer </p>
-            <form class="forms-sample">
+            <form method="post" action="/addcom" class="forms-sample">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputName1">Host</label>
+                    <input type="text" name="host" class="form-control" id="exampleInputName1" placeholder="host">
+                </div>
                 <div class="form-group">
                     <label for="exampleInputName1">Name Of Computer</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                    <input type="text" name="computer" class="form-control" id="exampleInputName1" placeholder="Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail3">User Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Username">
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail3" placeholder="Username">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword4">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
 

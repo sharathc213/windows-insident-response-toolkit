@@ -1,8 +1,6 @@
 {% load static %}
 
 <!-- Favicon -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,24 +25,29 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+
+
+
+
+    <link rel="stylesheet" href="{% static 'vendor/alertify-js/build/css/alertify.css' %}" />
+    <link rel="stylesheet" href="{% static 'vendor/alertify-js/build/css/themes/bootstrap.css' %}" />
+    <script src="{% static 'vendor/alertify-js/build/alertify.js' %}"></script>
+    {% comment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> {% endcomment %}
+
+    <link rel="stylesheet" href="{% static 'node_modules/xterm/css/xterm.css' %}" />
+    <script src="{% static 'node_modules/xterm/lib/xterm.js' %}"></script>
 </head>
 </head>
 
 <body>
     <div class="container-scroller">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
 
         <!-- Content Start -->
         {% include "Navbar.html" %} {% block Main %} {% endblock Main %}
 
         <!-- Content End -->
-        {% include "Footer.html" %}
+
 
     </div>
     <!-- page-body-wrapper ends -->
@@ -69,6 +72,7 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/custome.js' %}"></script>
     <!-- End custom js for this page -->
 </body>
 
