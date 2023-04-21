@@ -78,142 +78,159 @@ def addcom(request):
 def action(request):
     host = request.POST['host']
     action = request.POST['action']
-
     winrm_session = connectionss(host)
 
+    
+
     if action == "1":
+        data=[]
         try:
             print("IP Configuration:")
             result = winrm_session.run_cmd('ipconfig', ['/all'])
+            print(result.std_out.decode('ascii'))
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                # print(result_line)
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"IP Configuration",'data':data})
             
         except:
             print(123)
             return JsonResponse({'msg':'error'})
     
     elif action == "2":
+            data=[]
             try:
                 print("Groups:")
                 result = winrm_session.run_cmd('net', ['localgroup'])
                 for result_line in result.std_out.decode('ascii').split("\r\n"):
-                    print(result_line)
-                    return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                    data.append(result_line)
+                return JsonResponse({'msg':'sucess','action':"Groups",'data':data})
             except:
                 return JsonResponse({'msg':'error'})
     
     elif action == "3":
+        data=[]
         try:
             print("Tasks:")
             result = winrm_session.run_cmd('tasklist', ['/svc'])
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Tasks",'data':data})
         except:
          
             return JsonResponse({'msg':'error'})
     elif action == "4":
+        data=[]
+        
         try:
             print("Services:")
             result = winrm_session.run_cmd('net', ['start'])
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Services",'data':data})
         except:
         
             return JsonResponse({'msg':'error'})
     
     elif action == "5":
+        data=[]
         try:
             print("Task Scheduler:")
             result = winrm_session.run_cmd('schtasks')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Task Scheduler",'data':data})
         except:
             
             return JsonResponse({'msg':'error'})
         
     elif action == "6":
+        data=[]
         try:
             print("Registry Control:")
             result = winrm_session.run_cmd('reg',['query','HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run'])
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Registry Control",'data':data})
         except:
             return JsonResponse({'msg':'error'})
     
     elif action == "7":
+        data=[]
         try:
             print("Active TCP & UDP ports:")
             result = winrm_session.run_cmd('netstat', ['-ano'])
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Active TCP & UDP ports",'data':data})
         except:
             return JsonResponse({'msg':'error'})
     elif action == "8":
+        data=[]
         try:
             print("File sharing:")
             result = winrm_session.run_cmd('net', ['view'])
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"File sharing",'data':data})
         except:
             return JsonResponse({'msg':'error'}) 
         
     elif action == "9":
+        data=[]
         try:
             print("Files:")
             result = winrm_session.run_cmd('forfiles /D -10 /S /M *.exe /C "cmd /c echo @ext @fname @fdate"')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Files:",'data':data})
         except:
             return JsonResponse({'msg':'error'})
         
     elif action == "10":
+        data=[]
         try:
             print("Firewall Config:")
             result = winrm_session.run_cmd('netsh firewall show config')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Firewall Config",'data':data})
         except:
             return JsonResponse({'msg':'error'})
         
     elif action == "11":
+        data=[]
         try:
             print("Sessions with other Systems:")
             result = winrm_session.run_cmd('net use')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Sessions with other Systems",'data':data})
         except:
             return JsonResponse({'msg':'error'})
         
     elif action == "12":
+        data=[]
         try:
             print("Open Sessions:")
             result = winrm_session.run_cmd('net session')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Open Sessions",'data':data})
         except:
             return JsonResponse({'msg':'error'})
     elif action == "13":
+        data=[]
         try:
             print("Log Entries:")
             result = winrm_session.run_cmd('wevtutil qe security')
             for result_line in result.std_out.decode('ascii').split("\r\n"):
-                print(result_line)
-                return JsonResponse({'msg':'sucess','action':"IP Configuration"})
+                data.append(result_line)
+            return JsonResponse({'msg':'sucess','action':"Log Entries",'data':data})
         except:
             return JsonResponse({'msg':'error'})
     else:
-        return JsonResponse({'msg':'error'})
+        return redirect("Dashboard")
 
 
 

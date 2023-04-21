@@ -10,4 +10,12 @@ def connectionss(host):
             password=data['PASS']
    
     winrm_session = winrm.Session(host, auth=(user, password))
+    # try:
+    #         print("IP Configuration:")
+    #         result = winrm_session.run_cmd('ipconfig', ['/all'])
+    #         for result_line in result.std_out.decode('ascii').split("\r\n"):
+    #             print(result_line)
+    # except:
+    #     return winrm_session
+                
     return winrm_session
