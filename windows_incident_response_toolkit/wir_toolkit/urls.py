@@ -11,4 +11,6 @@ urlpatterns = [
     path('Delete/<str:param>/', views.Delete, name='Delete'),
     path('addcom', views.addcom, name='addcom'),
     path('action', views.action, name='action'),
+    path('login', views.login, name='login'),
+    path('logout', views.logout, name='logout'),
 ]

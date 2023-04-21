@@ -14,6 +14,9 @@ message=""
 def Signin(request):
     return render(request,'Signin.html')
 
+def logout(request):
+    return redirect("Signin")
+
 def Dashboard(request,param=None):
     context = {}
     with open('config.json', "r+") as file:
@@ -51,6 +54,16 @@ def Scan(request,param=None):
         # Do something with the parameter value
         context["host"]=param
     return render(request,'Scan.html',context)
+
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    if username=="admin" and password=="admin":
+        return redirect("Dashboard")
+    else:
+        return redirect("Signin")
+    
+    
 
 def addcom(request):
     comname = request.POST['computer']
@@ -231,18 +244,5 @@ def action(request):
             return JsonResponse({'msg':'error'})
     else:
         return redirect("Dashboard")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
